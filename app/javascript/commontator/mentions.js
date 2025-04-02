@@ -1,3 +1,6 @@
+import '../../../vendor/assets/javascripts/underscore/underscore'
+import '../../../vendor/assets/javascripts/mentionsInput/jquery.mentionsInput'
+
 window.Commontator = {};
 Commontator._ = window._.noConflict();
 Commontator.initMentions = function() {
@@ -30,3 +33,5 @@ Commontator.initMentions = function() {
         });
     });
 };
+
+export { Commontator };

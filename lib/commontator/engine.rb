@@ -1,13 +1,13 @@
 require 'commontator'
-require 'sprockets/railtie'
 
 class Commontator::Engine < ::Rails::Engine
   isolate_namespace Commontator
 
-  # Files in installed gems don't change during development,
-  # but still cause issues in Rails 7 if autoloaded in an initializer
-  # To fix this, make sure they are autoloaded only once
-  config.autoload_once_paths = config.autoload_paths + config.eager_load_paths
+  initializer "commontator.propshaft", group: :all do |app|
+    asset_path = root.join("app", "assets").to_s
 
-  config.assets.precompile += [ 'commontator/*.png' ]
+    unless app.config.public_file_server.paths.include?(asset_path)
+      app.config.public_file_server.paths << asset_path
+    end
+  end
 end

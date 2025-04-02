@@ -7,6 +7,7 @@
  *
  * License: MIT License - http://www.opensource.org/licenses/mit-license.php
  */
+import _ from "../underscore/underscore";
 
 (function ($, _, undefined) {
 
@@ -536,3 +537,5 @@
     };
 
 })(jQuery, _);
+
+export default $.fn.mentionsInput;

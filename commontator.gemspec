@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.files = Dir['{app,config,db,lib,vendor}/**/*'] + [ 'MIT-LICENSE', 'README.md' ]
 
   gem.add_dependency 'rails', '>= 6.0'
-  gem.add_dependency 'sprockets-rails'
+  gem.add_dependency 'propshaft'
   gem.add_dependency 'will_paginate'
 
   gem.add_development_dependency 'jquery-rails'
